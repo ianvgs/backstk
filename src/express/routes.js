@@ -12,6 +12,11 @@ module.exports = app => {
     res.send("Você acessou o backend do projeto Guedestocks, consulte o manual no README para verificar os métodos disponíveis.").status(200)
   }) 
 
+  app.post('/admin',async (req, res)=>{ 
+    console.log(req.body)    
+    Crud.admin(req,res)
+  }) 
+
 }
 
 

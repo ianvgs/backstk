@@ -32,7 +32,14 @@ class Crud {
                 return res.json({error,message:"Código da ação invalida"});
             }     
         }   
-    } 
+    }
+    
+    async admin (req,res){
+        const acao = req.body.acao
+        const reg = await Consultar.create({acao:acao, id:''})
+        return res.status(200).json(reg)
+
+    }
 }
 
 
