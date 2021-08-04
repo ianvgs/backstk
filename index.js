@@ -4,10 +4,10 @@ const dotenv = require('dotenv')
 const sequelize = require('./src/database/index')
 dotenv.config();
 app.set('view engine','pug')
-//app.use(express.static())
+
 try {
     sequelize.authenticate();
-    sequelize.sync({force:true});
+    sequelize.sync();
     console.log('Connection has been established successfully.');
     myFunction();
   } catch (error) {
