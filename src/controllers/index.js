@@ -13,7 +13,14 @@ class Crud {
             raw:true,
             limit: 1,
             order: [ [ 'createdAt', 'DESC' ]]
-        })     
+        }) 
+        if(!resu){
+
+            const acao = req.body.acao
+            const reg = await Consultar.create({acao:acao, id:''})
+            return res.status(200).json(reg)
+        } 
+           
         if (resu[0].acao === acao){
            return res.status(200).json({message: "Você acabou de fazer essa consulta, informe outra ação."})
         }

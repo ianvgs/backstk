@@ -7,7 +7,7 @@ app.set('view engine','pug')
 //app.use(express.static())
 try {
     sequelize.authenticate();
-    sequelize.sync();
+    sequelize.sync({force:true});
     console.log('Connection has been established successfully.');
     myFunction();
   } catch (error) {
