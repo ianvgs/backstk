@@ -47,6 +47,11 @@ class Crud {
         return res.status(200).json(reg)
 
     }
+
+    async consultartodos(req,res){        
+        const reg = await Consultar.findAll();
+        return res.status(200).json(reg)
+    }
 }
 
 

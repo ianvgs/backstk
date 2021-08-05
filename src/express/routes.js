@@ -16,6 +16,12 @@ module.exports = app => {
     console.log(req.body)    
     Crud.admin(req,res)
   }) 
+  app.get('/todos', (req, res)=>{    
+    console.log(req.body)    
+    Crud.consultartodos(req,res)
+  }) 
+
+
 
 }
 
